@@ -69,3 +69,15 @@ ZHUATECH_LLM_API_KEY=
 深度开发、中小企业 AI 转型和软件项目外包请访问：[https://www.zhuatech.cn/](https://www.zhuatech.cn/)
 
 SEO：Excel智能筛选,自然语言筛选,表格数据分析,数据质量,DeepSeek Java、企业 AI 转型、知华科技、上海软件外包、中小企业信息化。
+
+
+## 2026 企业级热度项目升级
+
+本次根据公开仓库访问热度补充 **数据质量与发布治理**：对缺失、重复、模式漂移、敏感字段、责任人和血缘进行质量评级及发布阻断。
+
+- 企业 API：`POST /api/enterprise/data-quality/assess`
+- 决策输出：执行许可、量化指标、阻断/升级路线、控制清单
+- 可审计性：规则确定、输入输出可留痕，并附正常与阻断场景测试
+- AI 接入：预留 DeepSeek-compatible 建议层配置，AI 不直接绕过审批或改变正式业务状态
+
+详细设计见 [企业级升级说明](docs/ENTERPRISE_UPGRADE.md)。深度开发、企业部署和系统集成请联系[知华科技（上海如静知华信息科技有限公司）](https://www.zhuatech.cn/)。
