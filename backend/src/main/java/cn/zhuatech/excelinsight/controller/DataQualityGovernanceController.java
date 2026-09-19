@@ -9,17 +9,27 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-/** 企业级决策 API，调用方应保存请求、响应与审批审计轨迹。 */
+/**
+ * 企业级决策 API，调用方应保存请求、响应与审批审计轨迹。
+ *
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @RestController
 @RequestMapping("/api/enterprise/data-quality")
 @CrossOrigin(originPatterns = {"http://localhost:*", "http://127.0.0.1:*"})
 public class DataQualityGovernanceController {
     private final DataQualityGovernanceService service;
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public DataQualityGovernanceController(DataQualityGovernanceService service) {
         this.service = service;
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @PostMapping("/assess")
     public DataQualityGovernanceService.Assessment decide(@Valid @RequestBody DataQualityGovernanceService.Request request) {
         return service.assess(request);

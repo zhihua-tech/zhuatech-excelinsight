@@ -10,9 +10,16 @@ import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.List;
 
-/** Excel 数据进入正式报表或业务流程前的数据质量门禁。 */
+/**
+ * Excel 数据进入正式报表或业务流程前的数据质量门禁。
+ *
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Service
 public class DataQualityGovernanceService {
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public Assessment assess(Request request) {
         BigDecimal issueRate = BigDecimal.valueOf((request.missingCells() + request.duplicateRows()) * 100L)
                 .divide(BigDecimal.valueOf(request.rowCount()), 2, RoundingMode.HALF_UP);
@@ -35,12 +42,18 @@ public class DataQualityGovernanceService {
                 publishAllowed, List.copyOf(controls));
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Request(@NotBlank String datasetId, @Min(1) int rowCount,
                           @Min(0) int missingCells, @Min(0) int duplicateRows,
                           @Min(0) int schemaDriftColumns, @Min(0) int piiColumns,
                           boolean ownerAssigned, boolean lineageDocumented,
                           boolean publishApproved) {}
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Assessment(String datasetId, BigDecimal issueRate, int riskScore,
                              String qualityGrade, String route, boolean publishAllowed,
                              List<String> controls) {}
